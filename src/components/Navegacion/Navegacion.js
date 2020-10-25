@@ -10,6 +10,7 @@ import jwt_decode from 'jwt-decode';
 import clienteAxios from '../../config/axios';
 import RightMenu from './RightMenu';
 import { MenuContext } from '../../context/carritoContext';
+import aws from '../../config/aws';
 
 const { Search } = Input;
 const { Header } = Layout;
@@ -113,7 +114,7 @@ const Navegacion = (props) => {
 											<img
 												className="imagen-logo-principal"
 												alt="logotipo-tienda"
-												src={`https://prueba-imagenes-uploads.s3.us-west-1.amazonaws.com/${tienda.imagenLogo}`}
+												src={`${aws}${tienda.imagenLogo}`}
 											/>
 										</Link>
 									</div>
@@ -196,7 +197,7 @@ const Navegacion = (props) => {
 											) : (
 												<Avatar
 													size="large"
-													src={`https://prueba-imagenes-uploads.s3.us-west-1.amazonaws.com/${decoded.imagen}`}
+													src={`${aws}${decoded.imagen}`}
 												/>
 											)
 										}
@@ -230,7 +231,7 @@ const Navegacion = (props) => {
 											) : (
 												<Avatar
 													size="large"
-													src={`https://prueba-imagenes-uploads.s3.us-west-1.amazonaws.com/${decoded.imagen}`}
+													src={`${aws}${decoded.imagen}`}
 												>
 													{/* <p>{decoded.nombre.charAt(0)}</p> */}
 												</Avatar>
@@ -299,7 +300,7 @@ const Navegacion = (props) => {
 										<img
 											className="imagen-logo-principal"
 											alt="logotipo-tienda"
-											src={`https://prueba-imagenes-uploads.s3.us-west-1.amazonaws.com/${tienda.imagenLogo}`}
+											src={`${aws}${tienda.imagenLogo}`}
 										/>
 									</Link>
 								</div>
