@@ -114,7 +114,7 @@ const Navegacion = (props) => {
 											<img
 												className="imagen-logo-principal"
 												alt="logotipo-tienda"
-												src={`${aws}${tienda.imagenLogo}`}
+												src={aws + tienda.imagenLogo}
 											/>
 										</Link>
 									</div>
@@ -197,7 +197,7 @@ const Navegacion = (props) => {
 											) : (
 												<Avatar
 													size="large"
-													src={`${aws}${decoded.imagen}`}
+													src={aws + decoded.imagen}
 												/>
 											)
 										}
@@ -231,7 +231,7 @@ const Navegacion = (props) => {
 											) : (
 												<Avatar
 													size="large"
-													src={`${aws}${decoded.imagen}`}
+													src={aws + decoded.imagen}
 												>
 													{/* <p>{decoded.nombre.charAt(0)}</p> */}
 												</Avatar>
@@ -300,7 +300,7 @@ const Navegacion = (props) => {
 										<img
 											className="imagen-logo-principal"
 											alt="logotipo-tienda"
-											src={`${aws}${tienda.imagenLogo}`}
+											src={aws + tienda.imagenLogo}
 										/>
 									</Link>
 								</div>
