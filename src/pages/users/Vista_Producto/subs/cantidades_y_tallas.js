@@ -96,7 +96,7 @@ function TallasCantidades(props) {
 			if (productos.promocion && productos.promocion.length) {
 				productos.promocion.forEach((res) => setPromocion(res.precioPromocion));
 			}
-			if (productos.tipoCategoria === 'calzado') {
+			if (productos.tipoCategoria === 'Calzado') {
 				setCategoria('calzado');
 				setRender(
 					productos.numeros.map((numeros) => {
@@ -124,7 +124,7 @@ function TallasCantidades(props) {
 						);
 					})
 				);
-			} else if (productos.tipoCategoria === 'ropa') {
+			} else if (productos.tipoCategoria === 'Ropa') {
 				setCategoria('ropa');
 				setRender(
 					productos.tallas.map((tallas) => {
@@ -152,7 +152,7 @@ function TallasCantidades(props) {
 						);
 					})
 				);
-			} else if (productos.tipoCategoria === 'otros') {
+			} else if (productos.tipoCategoria === 'Otros') {
 				setCategoria('otros');
 			}
 			if (productos && productos.activo === false) {
