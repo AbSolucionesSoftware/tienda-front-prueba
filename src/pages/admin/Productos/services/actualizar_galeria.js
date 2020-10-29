@@ -62,7 +62,7 @@ function RegistrarGaleria() {
 				obtenerBD();
 				setLoading(false);
 				notification.success({
-					message: 'Hecho!',
+					message: '¡Hecho!',
 					description: res.data.message,
 					duration: 2
 				});
@@ -98,7 +98,7 @@ function RegistrarGaleria() {
 				obtenerBD();
 				setLoading(false);
 				notification.success({
-					message: 'Hecho!',
+					message: '¡Hecho!',
 					description: res.data.message,
 					duration: 2
 				});
@@ -159,7 +159,7 @@ function RegistrarGaleria() {
 				obtenerBD();
 				setLoading(false);
 				notification.success({
-					message: 'Hecho!',
+					message: '¡Hecho!',
 					description: res.data.message,
 					duration: 2
 				});
@@ -233,7 +233,7 @@ function RegistrarGaleria() {
 	return (
 		<Spin size="large" spinning={loading}>
 			<div className="d-flex justify-content-center m-2">
-				<Alert message="Tamaño recomendado para la imagen es: 850x550px" type="info" showIcon />
+				<Alert message="Tamaño recomendado para la imagen es: 800x800px" type="info" showIcon />
 			</div>
 			<div className="responsive">
 				<div className="col-sm-4 col-lg-6 imgUploads">
