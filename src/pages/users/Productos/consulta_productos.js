@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import clienteAxios from '../../../config/axios';
-import { Card, Col, Row, Spin, notification, Result } from 'antd';
+import { Card, Spin, notification, Result } from 'antd';
 import Pagination from '../../../components/Pagination/pagination';
 import queryString from 'query-string';
 import { Link } from 'react-router-dom';
@@ -57,7 +57,7 @@ function ConsultaProductos(props) {
 	}
 
 	const render = productos.map((productos) => (
-		<Col key={productos._id} className="size-col col-lg-2 col-6">
+		<div key={productos._id} className="size-col col-lg-2 col-6">
 			<Link to={`/vista_producto/${productos._id}`}>
 				<Card.Grid hoverable style={gridStyle} className="border contenedor-card-producto-principal">
 					<Card
@@ -116,7 +116,7 @@ function ConsultaProductos(props) {
 					</Card>
 				</Card.Grid>
 			</Link>
-		</Col>
+		</div>
 	));
 
 	return (
@@ -124,7 +124,7 @@ function ConsultaProductos(props) {
 			{/* <div className="principal-productos"><p>NUESTROS PRODUCTOS</p></div> */}
 			<div className="d-flex justify-content-center align-items-center">
 				<div className="">
-					<Row gutter={10} style={{ maxWidth: '95vw' }} className="mt-4">
+					<div style={{ maxWidth: '95vw' }} className="row mt-4">
 
 						{productos.length ? (
 							render
@@ -133,7 +133,7 @@ function ConsultaProductos(props) {
 								<Result status="404" title="Articulo no encontrado" />
 							</div>
 						)}
-					</Row>
+					</div>
 				</div>
 			</div>
 			<Pagination

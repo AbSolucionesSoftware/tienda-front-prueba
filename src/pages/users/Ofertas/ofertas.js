@@ -27,6 +27,8 @@ function Ofertas(props) {
 		[ page ]
 	);
 
+	console.log(productos)
+
 	async function obtenerProductos(limit, page) {
 		setLoading(true);
 		await clienteAxios
@@ -83,10 +85,6 @@ function Ofertas(props) {
 			</Link>
 		</Col>
 	));
-
-	if(productos.length === 0){
-		props.history.push('/');
-	}
 
 	return (
 		<Spin size="large" spinning={loading}>

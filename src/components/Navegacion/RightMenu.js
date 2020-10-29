@@ -7,6 +7,7 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import { LogoutOutlined, SettingOutlined } from '@ant-design/icons';
 import jwt_decode from 'jwt-decode';
+import aws from '../../config/aws';
 
 const { SubMenu } = Menu;
 
@@ -68,7 +69,7 @@ function RightMenu(props) {
 						) : (
 							<Avatar
 								size="large"
-								src={`https://prueba-imagenes-uploads.s3.us-west-1.amazonaws.com/${decoded.imagen}`}
+								src={aws+decoded.imagen}
 							/>
 						)
 					}
@@ -102,7 +103,7 @@ function RightMenu(props) {
 						) : (
 							<Avatar
 								size="large"
-								src={`https://prueba-imagenes-uploads.s3.us-west-1.amazonaws.com/${decoded.imagen}`}
+								src={aws+decoded.imagen}
 							>
 								{/* <p>{decoded.nombre.charAt(0)}</p> */}
 							</Avatar>
