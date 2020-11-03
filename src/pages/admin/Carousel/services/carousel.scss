@@ -43,13 +43,17 @@
     display: flex;
     justify-content: space-around;
 }
-/* For upload antd */
-.ant-upload-list-item-info::before{
-    left: 0!important;
-}
-.ant-upload-list-text{
+.upload-text-display .ant-upload-list-text, .ant-upload-list{
+    /* left: 0!important; */
     display: none;
 }
+/* For upload antd */
+/* .ant-upload-list-item-info::before{
+    
+} */
+/* .ant-upload-list-text{
+    
+} */
 .imagen-preview-carousel{
     height: 200px;
 }

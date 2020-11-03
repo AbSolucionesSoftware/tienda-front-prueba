@@ -42,7 +42,7 @@ function Inventario(props) {
 		() => {
 			obtenerProductos(20, page);
 		},
-		[ page ]
+		[ page, reload ]
 	);
 
 	const columns = [
@@ -247,11 +247,11 @@ function Inventario(props) {
 				>
 					Volver
 				</Button>
-				
-			</Row>
-			<div className="d-flex justify-content-center my-3">
 				<GetDataFromExcelJusTInput reload={[reload, setReload]} />
-			</div>
+			</Row>
+			{/* <div className="d-flex justify-content-center my-3">
+				<GetDataFromExcelJusTInput reload={[reload, setReload]} />
+			</div> */}
 			
 			<Table
 				className="tabla-inventario"

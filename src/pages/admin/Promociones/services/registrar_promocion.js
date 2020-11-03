@@ -431,7 +431,7 @@ const RegistrarPromocion = (props) => {
 								</p>
 								<div className="d-flex justify-content-center m-2">
 									<Alert
-										message="Tamaño recomendado para la imagen es: 1650x565px"
+										message="Tamaño recomendado para la imagen es: 1710x330px"
 										type="info"
 										showIcon
 									/>

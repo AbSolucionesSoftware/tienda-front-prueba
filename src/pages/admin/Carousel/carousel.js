@@ -288,7 +288,7 @@ function Carousel(props) {
 				no existan promociones, si no existen promociones apareceran estas imagenes.
 			</p>
 			<div className="d-flex justify-content-center m-2">
-				<Alert message="Tamaño recomendado para la imagen es: 1650x565px" type="info" showIcon />
+				<Alert message="Tamaño recomendado para la imagen es: 1710x330px" type="info" showIcon />
 			</div>
 			<Row justify="center mt-5">
 				<Search
