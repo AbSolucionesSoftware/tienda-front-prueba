@@ -1,4 +1,4 @@
-import { Upload, Button } from 'antd';
+import { Button, notification } from 'antd';
 import React from 'react';
 import * as XLSX from 'xlsx';
 import clienteAxios from '../config/axios';
@@ -9,15 +9,7 @@ class GetDataFromExcelJusTInput extends React.Component {
 		this.state = {
 			hoja: '',
 			hojas: [],
-			file: false,
-			fileList: [
-				{
-					uid: '-1',
-					name: 'xxx.png',
-					status: 'done',
-					url: 'http://www.baidu.com/xxx.png'
-				}
-			]
+			file: false
 		};
 
 		this.handleInputChange = this.handleInputChange.bind(this);
@@ -60,7 +52,7 @@ class GetDataFromExcelJusTInput extends React.Component {
 	enviarDatos() {
     const token = localStorage.getItem('token');
 		clienteAxios
-			.post(
+			.put(
 				'/productos/inventario/excel/',
 				this.state
 					.hojas[0] , {
@@ -71,6 +63,11 @@ class GetDataFromExcelJusTInput extends React.Component {
 			)
 			.then((res) => {
 				console.log(res);
+				notification.success({
+					message: 'Registros actualizados',
+					description: 'recarga la pagina',
+					duration: 2
+				});
 			})
 			.catch((err) => {
 				console.log(err);
