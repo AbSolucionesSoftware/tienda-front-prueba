@@ -248,7 +248,7 @@ function ActualizarProducto(props) {
 
 	const subirDatos = async () => {
 		const formData = new FormData();
-		if (productos.tipoCategoria === 'otros') {
+		if (productos.tipoCategoria === 'Otros') {
 			formData.append('codigo', productos.codigo);
 			formData.append('nombre', productos.nombre);
 			formData.append('categoria', productos.categoria);
@@ -415,7 +415,7 @@ function ActualizarProducto(props) {
 								</Form.Item>
 							</Input.Group>
 						</Form.Item>
-						{productos.tipoCategoria === 'otros' ? (
+						{productos.tipoCategoria === 'Otros' ? (
 							<Form.Item label="Stock actual" onChange={obtenerValores}>
 								<Form.Item
 									rules={[ { required: true, message: 'Este campo es requerido' } ]}
