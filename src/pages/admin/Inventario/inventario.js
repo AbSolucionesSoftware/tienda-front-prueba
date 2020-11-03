@@ -7,6 +7,7 @@ import { RollbackOutlined } from '@ant-design/icons';
 import './inventario.scss';
 import Pagination from '../../../components/Pagination/pagination';
 import queryString from 'query-string';
+import GetDataFromExcelJusTInput from '../../../components/excel';
 
 const { Search } = Input;
 
@@ -21,6 +22,7 @@ function Inventario(props) {
 	const [ productos, setProductos ] = useState([]);
 	const [ productosRender, setProductosRender ] = useState([]);
 	const [ visible, setVisible ] = useState('d-none');
+	const [ reload, setReload ] = useState(true);
 
 	function Jwt(token) {
 		try {
@@ -245,7 +247,12 @@ function Inventario(props) {
 				>
 					Volver
 				</Button>
+				
 			</Row>
+			<div className="d-flex justify-content-center my-3">
+				<GetDataFromExcelJusTInput reload={reload} setReload={setReload} />
+			</div>
+			
 			<Table
 				className="tabla-inventario"
 				columns={columns}
