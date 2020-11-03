@@ -17,8 +17,7 @@ function CarouselOfertas(props) {
 				.then((res) => {
 					setCarousels(res.data);
 				})
-				.catch((res) => {
-				});
+				.catch((res) => {});
 		};
 		const obtenerPromociones = async () => {
 			await clienteAxios
@@ -34,7 +33,7 @@ function CarouselOfertas(props) {
 					}
 				})
 				.catch((res) => {
-					console.log(res)
+					console.log(res);
 				});
 		};
 		obtenerPromociones();
@@ -45,30 +44,38 @@ function CarouselOfertas(props) {
 	};
 
 	const render = carousels.map((carousel) => {
-		return (
-			<Carousel.Item key={carousel._id}>
-				<div className="carousel-home">
-					<div className="background-carousel" style={{
-						backgroundImage: `url(${esPromocion
-							? aws+carousel.imagenPromocion
-							: aws+carousel.imagen})`
-					}}/>
-					<div className="contenedor-imagen-principal-promociones">
-						<img
-							onClick={() => props.history.push(esPromocion
-								? `/vista_producto/${carousel.productoPromocion._id}`
-								: carousel.producto ? `/vista_producto/${carousel.producto}` : '/')}
-							className="imagen-carousel-promociones-principal"
-							src={esPromocion
-								? aws+carousel.imagenPromocion
-								: aws+carousel.imagen}
-							alt="img-oferta"
-							style={{cursor: 'pointer'}}
+		if (carousel.imagen === null || carousel.imagenPromocion === null || carousel.imagenPromocion === 'null') {
+			return null;
+		} else {
+			return (
+				<Carousel.Item key={carousel._id}>
+					<div className="carousel-home">
+						<div
+							className="background-carousel"
+							style={{
+								backgroundImage: `url(${esPromocion
+									? aws + carousel.imagenPromocion
+									: aws + carousel.imagen})`
+							}}
 						/>
+						<div className="contenedor-imagen-principal-promociones">
+							<img
+								onClick={() =>
+									props.history.push(
+										esPromocion
+											? `/vista_producto/${carousel.productoPromocion._id}`
+											: carousel.producto ? `/vista_producto/${carousel.producto}` : '/'
+									)}
+								className="imagen-carousel-promociones-principal"
+								src={esPromocion ? aws + carousel.imagenPromocion : aws + carousel.imagen}
+								alt="img-oferta"
+								style={{ cursor: 'pointer' }}
+							/>
+						</div>
 					</div>
-				</div>
-			</Carousel.Item>
-		);
+				</Carousel.Item>
+			);
+		}
 	});
 
 	return (
