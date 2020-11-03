@@ -250,7 +250,7 @@ function Inventario(props) {
 				
 			</Row>
 			<div className="d-flex justify-content-center my-3">
-				<GetDataFromExcelJusTInput reload={reload} setReload={setReload} />
+				<GetDataFromExcelJusTInput reload={[reload, setReload]} />
 			</div>
 			
 			<Table
