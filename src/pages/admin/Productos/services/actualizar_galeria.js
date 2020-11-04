@@ -237,7 +237,7 @@ function RegistrarGaleria() {
 			</div>
 			<div className="responsive">
 				<div className="col-sm-4 col-lg-6 imgUploads">
-					<Upload {...antprops}>
+					<Upload {...antprops} className="upload-text-display">
 						<Button>
 							<UploadOutlined /> Upload
 						</Button>

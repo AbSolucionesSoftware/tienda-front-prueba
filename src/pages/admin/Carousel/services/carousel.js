@@ -293,8 +293,8 @@ function CarouselImages(props) {
 					)}
 					<div className="d-flex justify-content-center align-items-center my-4">
 						<Space>
-							<Upload {...antdProps}>
-								<Button className="upload-text-display" type="primary" /* disabled={producto.length !== 0 ? false : true} */>
+							<Upload {...antdProps} className="upload-text-display">
+								<Button type="primary" /* disabled={producto.length !== 0 ? false : true} */>
 									<UploadOutlined />Subir
 								</Button>
 							</Upload>

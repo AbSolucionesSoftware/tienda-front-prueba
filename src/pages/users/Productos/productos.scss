@@ -30,9 +30,9 @@
 .ant-col{
     width: 300px;
 }
-/* .size-col{
-    border: solid rgb(255, 0, 0);
-} */
+.size-col{
+    min-width: 200px;
+}
 .contenedor-card-producto-principal{
     cursor: pointer;
 }

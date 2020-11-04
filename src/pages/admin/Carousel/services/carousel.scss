@@ -43,8 +43,7 @@
     display: flex;
     justify-content: space-around;
 }
-.upload-text-display .ant-upload-list-text, .ant-upload-list{
-    /* left: 0!important; */
+.upload-text-display .ant-upload-list{
     display: none;
 }
 /* For upload antd */

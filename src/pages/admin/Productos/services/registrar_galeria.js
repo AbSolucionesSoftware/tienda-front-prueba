@@ -169,7 +169,7 @@ function RegistrarGaleria() {
 		<Spin size="large" spinning={loading}>
 			<div className="responsive">
 				<div className="col-sm-12 col-lg-6 imgUploads">
-					<Upload {...props}>
+					<Upload {...props} className="upload-text-display">
 						<Button>
 							<UploadOutlined /> Upload
 						</Button>
