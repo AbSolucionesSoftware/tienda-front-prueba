@@ -1,3 +1,3 @@
-const aws = "https://prueba-tienda.s3-us-west-1.amazonaws.com/"
+const aws = process.env.REACT_APP_AWS
 
 export default aws

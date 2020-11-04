@@ -1,5 +1,5 @@
 export default {
-    apiKey: "AIzaSyBXX7Q1VZ0CRwxmMEeDZl7VRQXs6QA9xuo",
+    apiKey: process.env.REACT_APP_FIREBASE,
     authDomain: "tienda-online-ab.firebaseapp.com",
     databaseURL: "https://tienda-online-ab.firebaseio.com",
     projectId: "tienda-online-ab",
