@@ -424,7 +424,7 @@ const RegistrarPromocion = (props) => {
 									</Form>
 								</Col>
 							</div>
-							<div className="row">
+							<div className="row d-none">
 								<p className="mt-2 texto-imagen">
 									Sube una imagen para la promoción, esta imagen aparecerá en el carrucel de
 									promociones

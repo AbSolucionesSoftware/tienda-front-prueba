@@ -331,7 +331,7 @@ const ActualizarPromocion = (props) => {
 								</Form>
 							</Col>
 						</div>
-						<div>
+						<div className="d-none">
 							<p className="mt-2 texto-imagen">
 								Actualizar imagen de promoción, recuerda que esta imagen aparecerá en el carrucel de
 								promociónes
