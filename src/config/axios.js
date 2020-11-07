@@ -1,7 +1,8 @@
 import axios from 'axios'
+import 'dotenv';
 
 const clienteAxios = axios.create({
-    baseURL : process.env.REACT_APP_AXIOS
+    baseURL : 'https://tienda-prueba-back.herokuapp.com/api'
 })
 
 export default clienteAxios
