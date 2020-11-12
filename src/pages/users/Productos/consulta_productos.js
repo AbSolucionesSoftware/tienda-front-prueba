@@ -121,7 +121,13 @@ function ConsultaProductos(props) {
 
 	return (
 		<Spin size="large" spinning={loading}>
-			{/* <div className="principal-productos"><p>NUESTROS PRODUCTOS</p></div> */}
+
+			<div className="contenedor-home-background">
+				<div className="row contenedor-home-banner">
+					<h4 className="mb-0 text-center font-weight-bold">¡Conoce nuestros productos!</h4>
+				</div>
+			</div>
+
 			<div className="d-flex justify-content-center align-items-center">
 				<div className="">
 					<div style={{ maxWidth: '95vw' }} className="row mt-4">
