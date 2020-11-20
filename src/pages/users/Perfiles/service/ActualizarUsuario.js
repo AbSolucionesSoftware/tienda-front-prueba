@@ -301,7 +301,7 @@ export default function ActualizarUsuario(props) {
 					''
 				) : (
 					<div>
-						<Divider style={{ fontSize: 22 }}>Contrasena</Divider>
+						<Divider style={{ fontSize: 22 }}>Contraseña</Divider>
 						<h5>Contraseña Actual:</h5>
 						<Form.Item name="contrasenaActual" onChange={datosPassword}>
 							<Input.Password name="contrasenaActual" placeholder="Contraseña actual" />
@@ -317,7 +317,7 @@ export default function ActualizarUsuario(props) {
 					</div>
 				)}
 				<div className="d-flex justify-content-center pb-3">
-					<Button htmlType="submit" type="primary" size="large" style={{ width: 150, fontSize: 20 }}>
+					<Button htmlType="submit" className="color-boton color-font-boton" size="large" style={{ width: 150, fontSize: 20 }}>
 						Guardar
 					</Button>
 				</div>

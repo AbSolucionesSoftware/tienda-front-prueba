@@ -6,7 +6,7 @@ import LayoutBasic from '../components/Layout/Layout'
 import AdminHome from '../pages/admin/Principal/principal'
 import RegistrarProductos from '../pages/admin/Productos/productos'
 import Pedidos from '../pages/admin/Pedidos/pedidos'
-import Promociones from '../pages/admin/Promociones/promociones'
+import Promociones from '../pages/admin/Promociones/promociones_principal'
 import SistemaApartado from '../pages/admin/Apartado/apartado'
 import Inventario from '../pages/admin/Inventario/inventario'
 import Sugerencias from '../pages/admin/Sugerencias/sugerencias'
@@ -40,6 +40,10 @@ import Error500 from '../pages/users/error500'
 import Search404 from '../pages/users/Resultado_Busqueda/404'
 import Success from '../pages/users/Success/success';
 import ErrorPago from '../pages/users/Success/error';
+
+import Recuperar_pass from '../components/Recuperar_pass/Recuperar_pass';
+
+
 
 const routes = [
 	{
@@ -106,6 +110,11 @@ const routes = [
 				component: Error404
 			}
 		]
+	},
+	{
+		path: '/resetPass/',
+		component: Recuperar_pass,
+		exact: false
 	},
 	{
 		path: '/',

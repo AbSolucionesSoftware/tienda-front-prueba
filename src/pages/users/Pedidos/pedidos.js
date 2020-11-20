@@ -159,7 +159,7 @@ export default function PedidosUsuario(props) {
 		<Spin spinning={loading}>
 			<div className="container">
 				<h4 className="text-center m-3">Mis Compras</h4>
-				<Tabs className="shadow bg-white rounded" defaultActiveKey="1" type="card" size="large">
+				<Tabs centered className="shadow bg-white rounded tabs-colors" defaultActiveKey="1" type="card" size="large">
 					<TabPane tab="Mis compras" key="1">
 						<div>
 							{showInfo !== true ? (
@@ -255,9 +255,8 @@ function Pedido(props) {
 			className="d-flex justify-content-center align-items-center m-5"
 			actions={[
 				<Button
-					className="d-flex justify-content-top align-items-top "
+					className="d-flex justify-content-top align-items-top color-boton"
 					style={{ fontSize: 16 }}
-					type="primary"
 					onClick={() => {
 						setElige(false);
 						showModal(true);
@@ -293,7 +292,6 @@ function Pedido(props) {
 						className="d-flex justify-content-center align-items-center my-3"
 						style={{ width: 100, height: 100 }}
 					>
-						<p>Pedido del producto sdsdsdsd</p>
 						<img
 							className="img-fluid"
 							alt="producto"
@@ -367,7 +365,7 @@ function Pedido(props) {
 							''
 						) : (
 							<div className="col-lg-6 col-sm-12">
-								<p className="m-0 font-weight-bold h3 text-primary" style={{ fontSize: '15px' }}>
+								<p className="m-0 font-weight-bold h3 color-fonts" style={{ fontSize: '15px' }}>
 									¡Hola!
 								</p>
 								<p className="mt-2" style={{ fontSize: '15px' }}>
@@ -398,7 +396,7 @@ function Apartado(props) {
 					<Button
 						className="d-flex justify-content-top align-items-top m-2 w-100"
 						style={{ fontSize: 16 }}
-						type="primary"
+						className="color-boton"
 						onClick={() => {
 							setElige(true);
 							showModal(true);
@@ -522,9 +520,9 @@ function Apartado(props) {
 										</p>
 										<a href={`${apartado.url}${apartado.codigo_seguimiento}`} target="_blank" rel="noopener noreferrer">
 											<Button
-												className="d-flex justify-content-center align-items-center"
+												className="d-flex justify-content-center align-items-center color-boton"
 												style={{ fontSize: 16 }}
-												type="primary"
+												
 											>
 												Seguír envío
 											</Button>
@@ -537,7 +535,7 @@ function Apartado(props) {
 						</div>
 						{apartado.tipoEntrega === 'ENVIO' ? (
 							<div className="col-lg-6 col-sm-12">
-								<p className="m-0 font-weight-bold h3 text-primary" style={{ fontSize: '15px' }}>
+								<p className="m-0 font-weight-bold h3 color-fonts" style={{ fontSize: '15px' }}>
 									¡Hola!
 								</p>
 								<p className="mt-2" style={{ fontSize: '15px' }}>

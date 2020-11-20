@@ -14,14 +14,14 @@ import './Confirnacion_Final.scss';
 
 export default function Confirmacion_Final(props) {
 	const { active, setActive } = useContext(MenuContext);
-	const { datosPedido, idPago, pedidoCompleto, token, history } = props;
+	const { datosPedido, idPago, pedidoCompleto, token, history,datosActualizados } = props;
 	const [ direccion, setDireccion ] = useState({});
 	const [ datosEnvio, setDatosEnvio ] = useState({});
 	const [ total, setTotal ] = useState(null);
 	const [ loading, setLoading ] = useState(false);
 
 	useEffect(() => {
-		setDireccion(pedidoCompleto.cliente.direccion[0]);
+		setDireccion(datosActualizados);
 		traerCostosEnvio();
 		setLoading(true);
 	}, []);
@@ -63,7 +63,7 @@ export default function Confirmacion_Final(props) {
 				}
 			})
 			.then(async (res) => {
-				let centavo = 100 * parseFloat(total);
+				let centavo = Math.round(100 * parseFloat(total));
 				const newPedido = pedidoCompleto;
 				newPedido.total = total;
 				const datosPago = {
@@ -167,7 +167,7 @@ export default function Confirmacion_Final(props) {
 					</div>
 				</div>
 				<div className="d-flex flex-row-reverse justify-content-center align-items-center text-center pb-3 mr-5 mt-5">
-					<Button size="large" type="primary" style={{ width: 200, textAlign: 'center' }} onClick={crearPago}>
+					<Button size="large" className="color-boton" style={{ width: 200, textAlign: 'center' }} onClick={crearPago}>
 						<ShoppingCartOutlined /> COMPRAR AHORA
 					</Button>
 				</div>
