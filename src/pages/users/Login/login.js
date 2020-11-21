@@ -107,7 +107,7 @@ function Login(props) {
 						Continuar
 					</Button>
 				</Form.Item>
-				<p className ="text-primary d-none">¿Has olvidado tu contrasena?</p>				
+				<p className ="text-primary">¿Has olvidado tu contrasena?</p>				
 			</Form>
 			<div  className="d-none col-12 mt-2">
 				<Form {...layout} name="basic" initialValues={{ remember: true }} onFinish={onRecuperar}>

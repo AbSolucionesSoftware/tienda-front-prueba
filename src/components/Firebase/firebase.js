@@ -51,7 +51,6 @@ function Firebase() {
 							setUser(!!user);
 							const token = res.data.token;
 							localStorage.setItem('token', token);
-							
 							const vista = localStorage.getItem("vistas");
 							if (vista) {
 								localStorage.getItem("vistas");
