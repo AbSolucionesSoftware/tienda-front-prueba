@@ -144,7 +144,6 @@ export default function PedidosUsuario(props) {
 					setEstado(true);
                 })
                 .catch((err) => {
-                    console.log(err.response)
                     notification.error({
                         message: 'Error del servidor',
                         description:
@@ -224,23 +223,15 @@ export default function PedidosUsuario(props) {
 				onCancel={() => {
 					showModal(false);
 				}}
-				footer={[
-					<Button
-						style={{ fontSize: 16 }}
-						type="primary"
-						onClick={() => {
-							showModal(false);
-						}}
-					>
-						Cerrar
-					</Button>
-				]}
+				footer={null}
 			>
+
 				{Elige === true ? (
 					<DetalleApartado detalleApartado={detalleApartado} />
 				) : (
 					<DetallesPedido detallePedido={detallePedido} />
 				)}
+				
 			</Modal>
 		</Spin>
 	);
@@ -448,7 +439,6 @@ function Apartado(props) {
 			<List.Item.Meta
 				avatar={
 					<div className="d-flex justify-content-center align-items-center my-3">
-						<p>Pedido del producto</p>
 						<div className="contenedor-imagen-mostrar-apartado">
 							<img
 								className="imagen-mostrar-apartado"
