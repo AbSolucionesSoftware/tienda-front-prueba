@@ -508,6 +508,7 @@ function ActualizarProducto(props) {
 									style={{ width: 250 }}
 									onChange={generoOnChange}
 								>
+									<Option value="Ninguno">Ninguno</Option>
 									<Option value="Niño">Niño</Option>
 									<Option value="Niña">Niña</Option>
 									<Option value="Hombre">Hombre</Option>
