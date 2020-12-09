@@ -154,25 +154,33 @@ function SistemaApartado(props) {
 							</div>
 						) : (
 							<Row gutter={16}>
-								{apartados.map((apartado) => apartado.apartadoMultiple.length ? (
-									<MostrarDatosMultiple 
-										key={apartado._id}
-										setDetalleApartado={setDetalleApartado}
-										showModal={showModal}
-										apartado={apartado}
-										setEstado={setEstado}
-										token={token}
-									/>
-								):(
-									<MostrarDatosTargeta
-										key={apartado._id}
-										setDetalleApartado={setDetalleApartado}
-										showModal={showModal}
-										apartado={apartado}
-										setEstado={setEstado}
-										token={token}
-									/>
-								) )}
+								{apartados.map((apartado) => {
+									if(apartado.apartadoMultiple && apartado.apartadoMultiple.length !== 0){
+										//console.log(apartado);
+										return (
+											<MostrarDatosMultiple 
+												key={apartado._id}
+												setDetalleApartado={setDetalleApartado}
+												showModal={showModal}
+												apartado={apartado}
+												setEstado={setEstado}
+												token={token}
+											/>
+										)
+									}else{
+										console.log(apartado);
+										return (
+											<MostrarDatosTargeta
+												key={apartado._id}
+												setDetalleApartado={setDetalleApartado}
+												showModal={showModal}
+												apartado={apartado}
+												setEstado={setEstado}
+												token={token}
+											/>
+										);
+									}
+								})}
 							</Row>
 						)}
 					</div>
