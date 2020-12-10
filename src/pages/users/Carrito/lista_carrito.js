@@ -64,7 +64,11 @@ function ListaCarrito(props) {
 			if (talla.length === 0 || tallaCantidad.length === 0) {
 				setValidateStatus('error');
 				setMedidaDisponible('No esta disponible');
-				setValidacion(true);
+				if (carrito.idarticulo.eliminado && carrito.idarticulo.eliminado === true) {
+					setValidacion(false);
+				}else{
+					setValidacion(true);
+				}
 			}else{
 				setMedida([ talla[0].talla, tallaCantidad[0].cantidad ]);
 			}
@@ -77,7 +81,11 @@ function ListaCarrito(props) {
 			if (numero.length === 0 || numeroCantidad.length === 0) {
 				setValidateStatus('error');
 				setMedidaDisponible('No esta disponible');
-				setValidacion(true);
+				if (carrito.idarticulo.eliminado && carrito.idarticulo.eliminado === true) {
+					setValidacion(false);
+				}else{
+					setValidacion(true);
+				}
 			}else {
 				setMedida([ numero[0].numero, numeroCantidad[0].cantidad ]);
 			}
