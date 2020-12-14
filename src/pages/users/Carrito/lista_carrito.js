@@ -69,7 +69,7 @@ function ListaCarrito(props) {
 				}else{
 					setValidacion(true);
 				}
-			}else{
+			} else {
 				setMedida([ talla[0].talla, tallaCantidad[0].cantidad ]);
 			}
 		} else if (carrito.idarticulo.numeros.length !== 0) {
@@ -77,7 +77,7 @@ function ListaCarrito(props) {
 			const numeroCantidad = carrito.idarticulo.numeros.filter(
 				(numeros) => carrito.medida[0].numero === numeros.numero && numeros.cantidad !== 0
 			);
-			
+
 			if (numero.length === 0 || numeroCantidad.length === 0) {
 				setValidateStatus('error');
 				setMedidaDisponible('No esta disponible');
@@ -86,7 +86,7 @@ function ListaCarrito(props) {
 				}else{
 					setValidacion(true);
 				}
-			}else {
+			} else {
 				setMedida([ numero[0].numero, numeroCantidad[0].cantidad ]);
 			}
 		}
@@ -195,17 +195,25 @@ function ListaCarrito(props) {
 									<Tag className="detalles-carrito color-border-tags">
 										Género: {carrito.idarticulo.genero}
 									</Tag>
-									{carrito.idarticulo.color && carrito.idarticulo.color !== "" ? (
+									{carrito.idarticulo.color && carrito.idarticulo.color !== '' ? (
 										<Tag className="detalles-carrito color-border-tags">
 											Color: {carrito.idarticulo.color}
 										</Tag>
-									):""}
+									) : (
+										''
+									)}
 
-									{carrito.idarticulo.colorHex && carrito.idarticulo.colorHex !== "" ? (
+									{carrito.idarticulo.colorHex && carrito.idarticulo.colorHex !== '' ? (
 										<Tag
-											style={{ backgroundColor: carrito.idarticulo.colorHex, height: 30, width: 30 }}
+											style={{
+												backgroundColor: carrito.idarticulo.colorHex,
+												height: 30,
+												width: 30
+											}}
 										/>
-									):""}
+									) : (
+										''
+									)}
 								</div>
 								{disponible.length ? (
 									<p className="titulo-disponible">Producto no disponible</p>

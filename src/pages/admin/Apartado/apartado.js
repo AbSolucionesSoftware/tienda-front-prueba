@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { withRouter } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import clienteAxios from '../../../config/axios';
@@ -38,6 +38,12 @@ function SistemaApartado(props) {
 		}
 	}
 
+	if (token === '' || token === null) {
+		props.history.push('/entrar');
+	} else if (decoded['rol'] !== true) {
+		props.history.push('/');
+	}
+
 	function obtenerProductosFiltrados(filter) {
 		setLoading(true);
 		clienteAxios
@@ -69,8 +75,9 @@ function SistemaApartado(props) {
 			});
 	}
 
-	function obtenerDatos(limit, page) {
-		setLoading(true);
+	const obtenerDatos = useCallback(
+		(limit, page) => {
+			setLoading(true);
 		clienteAxios
 			.get(`/apartado/?limit=${limit}&page=${page}`, {
 				headers: {
@@ -99,21 +106,17 @@ function SistemaApartado(props) {
 					});
 				}
 			});
-	}
+		},
+		[token],
+	)
 
 	useEffect(
 		() => {
-			if (token === '' || token === null) {
-				props.history.push('/entrar');
-			} else if (decoded['rol'] !== true) {
-				props.history.push('/');
-			} else {
-				obtenerDatos(24, page);
-				setLoading(true);
-				setEstado(false);
-			}
+			obtenerDatos(24, page);
+			setLoading(true);
+			setEstado(false);
 		},
-		[ page, filter, estado ]
+		[ page, filter, estado, obtenerDatos ]
 	);
 
 	const showModal = () => {
@@ -154,33 +157,25 @@ function SistemaApartado(props) {
 							</div>
 						) : (
 							<Row gutter={16}>
-								{apartados.map((apartado) => {
-									if(apartado.apartadoMultiple && apartado.apartadoMultiple.length !== 0){
-										//console.log(apartado);
-										return (
-											<MostrarDatosMultiple 
-												key={apartado._id}
-												setDetalleApartado={setDetalleApartado}
-												showModal={showModal}
-												apartado={apartado}
-												setEstado={setEstado}
-												token={token}
-											/>
-										)
-									}else{
-										console.log(apartado);
-										return (
-											<MostrarDatosTargeta
-												key={apartado._id}
-												setDetalleApartado={setDetalleApartado}
-												showModal={showModal}
-												apartado={apartado}
-												setEstado={setEstado}
-												token={token}
-											/>
-										);
-									}
-								})}
+								{apartados.map((apartado) => apartado.apartadoMultiple.length ? (
+									<MostrarDatosMultiple 
+										key={apartado._id}
+										setDetalleApartado={setDetalleApartado}
+										showModal={showModal}
+										apartado={apartado}
+										setEstado={setEstado}
+										token={token}
+									/>
+								):(
+									<MostrarDatosTargeta
+										key={apartado._id}
+										setDetalleApartado={setDetalleApartado}
+										showModal={showModal}
+										apartado={apartado}
+										setEstado={setEstado}
+										token={token}
+									/>
+								) )}
 							</Row>
 						)}
 					</div>
